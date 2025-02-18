@@ -1,0 +1,33 @@
+#include<stdio.h>
+struct book_info{
+    int price;
+    char name[20];
+};
+int main()
+{
+  int i,n,pos;
+  printf("enter no. of book you want accept\n");
+  scanf("%d",&n);
+  struct book_info b[n];
+  printf("enter book info\n");
+  for(i=0;i<n;i++)
+  {
+    printf("enter book price and book name respectively\n");
+    scanf("%d%s",&b[i].price,b[i].name);
+  }
+  printf("enter the postion where you want to delete book information\n");
+  scanf("%d",&pos);
+  for(i=0;i<n-1;i++)
+  {
+    b[i]=b[i+1];
+  }
+ printf("book information deleted successfully\n");
+  printf("updated book information\n");
+  for(i=0;i<n-1;i++)
+  {
+    printf("book no. %d\n",i+1);
+    printf("book price %d\n",b[i].price);
+    printf("book name %s\n",b[i].name);
+  } 
+return 0;
+}
